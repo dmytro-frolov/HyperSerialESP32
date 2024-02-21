@@ -152,6 +152,8 @@
 		public:
 		bool CanShow() {return true;}
 		void Show(bool safe) {}
+		template<typename ColorObject>
+		void ClearTo(const ColorObject& color) {}
 	};
 #endif
 
