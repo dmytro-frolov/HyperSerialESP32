@@ -43,6 +43,9 @@
 
 bool serialTaskHandler()
 {
+	if (!SerialPort)
+		base.shutdown();
+
 	uint16_t incomingSize = min(SerialPort.available(), MAX_BUFFER - 1);
 
 	if (incomingSize > 0)

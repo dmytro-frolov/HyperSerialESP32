@@ -179,6 +179,25 @@ class Base
 
 			return (pix + 1 < ledsNumber);
 		}
+
+		inline void shutdown()
+		{
+			if (ledStrip1 != nullptr)
+			{
+				ledStrip1->ClearTo(0);
+				delete ledStrip1;
+				ledStrip1 = nullptr;
+			}
+
+			if (ledStrip2 != nullptr)
+			{
+				ledStrip2->ClearTo(0);
+				delete ledStrip2;
+				ledStrip2 = nullptr;
+			}
+
+		}
+
 } base;
 
 #endif
